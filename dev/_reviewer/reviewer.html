@@ -1,0 +1,7 @@
+<div ng-show="isReviewer">Reviewer
+    <div ng-repeat="c in comments" style="font-weight:lighter;font-size: 13px;background-color:rgba(240,240,240,1);margin:5px;">
+        <span>{{c.user}}</span><br>
+        <span>{{c.message}}</span><br>
+        <span ng-click="deleteComment(c)" style="font-weight:bold;font-size: 13px;cursor: pointer;">delete</span>
+    </div>
+</div>

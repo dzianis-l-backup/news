@@ -1,0 +1,41 @@
+{
+  "name": "ykn",
+  "description": "REST CRUD news application",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "start": "gulp start"
+  },
+  "dependencies": {
+    "body-parser": "1.9.0",
+    "chai": "^3.5.0",
+    "express": "4.9.5",
+    "express-myconnection": "*",
+    "express-validator": "^2.6.0",
+    "mocha": "^3.1.2",
+    "mysql": "*",
+    "request": "^2.79.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DziLean/tut-by.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DziLean/tut-by/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "browserify": "^14.3.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "run-sequence": "^1.2.2"
+  }
+}

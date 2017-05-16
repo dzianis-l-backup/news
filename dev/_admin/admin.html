@@ -1,0 +1,13 @@
+<div ng-show="isAdmin">Admin
+    <div ng-repeat="c in comments" style="font-weight:lighter;font-size: 13px;background-color:rgba(240,240,240,1);margin:5px;">
+        <span>{{c.user}}</span><br>
+        <span>{{c.message}}</span><br>
+        <span ng-click="ban(c)" style="font-weight:lighter;cursor: pointer;text-decoration: underline">Ban</span><br>
+        <span ng-click="unban(c)" style="font-weight:lighter;cursor: pointer;text-decoration: underline">Unban</span><br>
+        <span ng-click="delete(c)" style="font-weight:lighter;cursor: pointer;text-decoration: underline">Ban forever</span><br>
+    </div>
+    <br><input ng-model="link">link<br>
+    <input ng-model="title">title<br>
+    <input ng-model="description">description<br>
+    <span ng-click="addNews(link,title,description)" style="font-weight:lighter;font-size: 13px;font-weight:bold;cursor: pointer;">ADD</span><br>
+</div>

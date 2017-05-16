@@ -1,0 +1,9 @@
+<div ng-show="isUser">User
+    <div ng-repeat="c in comments" style="font-weight:lighter;font-size: 13px;background-color:rgba(240,240,240,1);margin:5px;">
+        <span>{{c.user}}</span><br>
+        <span>{{c.message}}</span>
+    </div>
+    <span>Comment here</span><br>
+    <textarea ng-model="commentArea"></textarea><br>
+    <span ng-click="postComment(commentArea)" style="font-weight:lighter;font-size: 13px;font-weight:bold;cursor: pointer;">SUBMIT</span><br>
+</div>

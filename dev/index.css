@@ -1,0 +1,86 @@
+html, body{
+    height:100%;
+    margin:0px;
+}
+body{
+    border-top: 20px solid #87D0E8;
+    border-left: 20px solid #87D0E8;
+    border-bottom: 10px solid black;
+
+}
+/*bootstrap redefinition*/
+.navbar{
+    margin-bottom:0px;
+}
+
+.row{
+    margin:0;
+}
+
+.dropdown li{
+    display: block;
+}
+
+.navbar a{
+    font-weight:bold;
+}
+
+.newsView{
+    border: 1px dashed rgba(200,200,200,0.5);
+}
+.scrollPanel{
+    border: 1px dashed rgba(200,200,200,0.5);
+}
+
+
+.inputData{
+    position:relative;
+    display:inline-block;
+
+}
+input{
+    height:40px;
+    width:200px;
+    padding:10px;
+    outline:none;
+    border:1px dashed rgba(0,0,0,0.2);
+}
+input[type=submit]{
+    background-color: #87D0E8;
+}
+
+
+
+
+/*
+
+
+
+*/
+
+
+.newsContainer{
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%,0);
+    text-align: center;
+}
+.panel{
+    float:right;
+    display: inline-block;
+    position: relative;
+    width:25%;
+    right:0px;
+    height:465px;
+    overflow-y:scroll;
+}
+.dataBlock{
+    display:inline-block;
+    position: relative;
+    width:90%;
+
+}

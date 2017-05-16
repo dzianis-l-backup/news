@@ -1,0 +1,86 @@
+
+#log_out{
+
+    width:70px;
+    height:30px;
+    border-radius:5px;
+    background-color: #d2d7de !important;
+    border:none;
+    position:absolute;
+    right:10px;
+    top:10px;
+    text-align :center;
+    vertical-align: middle;
+    cursor:pointer;
+    color:#54d433;
+
+}
+#log_out span{
+    color: rgba(52,56,180,1);
+    display: inline-block;
+    width: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+    font-size:19px;
+}
+#log_out:hover{
+    box-shadow: 0px 5px 10px 1px #000;
+}
+body{
+    margin:0;
+}
+#headerContainer{
+    top: 10px;
+    display: inline-block;
+    width: 300px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin: 0px;
+    font-family: cursive,serif !important;
+    font-size: 19px !important;
+}
+
+#logo{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    padding: 0;
+    display: inline-block;
+}
+#mentor{
+    position: absolute;
+    width: 100px;
+    left: 24%;
+    top: 50%;
+    color: rgba(52,56,180,1);
+    display: inline-block;
+    transform: translate(-50%,-50%);
+}
+#addition {
+    display: inline-block;
+    top: 46%;
+    height: 20px;
+    position: absolute;
+    right: 23%;
+    transform: translate(50%,-50%);
+}
+#addition_1{
+    position: relative;
+    color: #54b433;
+    display: inline-block;
+    float: right;
+}
+#addition_2{
+    margin-right: 5px;
+    position: relative;
+    color: rgba(52,56,180,1);
+    display: inline-block;
+    float: right;
+}

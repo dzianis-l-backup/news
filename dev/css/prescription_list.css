@@ -1,0 +1,261 @@
+body{
+    font-size:15px;
+
+}
+#prescription{
+    position:relative;
+    margin-top:100px;
+    border:1px solid black;
+    width:800px;
+    height:820px;
+    display: inline-block;
+    left:50%;
+    transform:translate(-50%,0%);
+    padding:0;
+}
+
+@keyframes w{
+    0%{
+        left:50%;
+    }
+
+    100%{
+        left:-50%;
+    }
+}
+
+#left{
+    left:1%;
+}
+#right{
+    left:50%;
+}
+.list{
+    margin:5px;
+    position:absolute;
+    border:1px solid black;
+    width:47%;
+    height:98%;
+    top:5px;
+    display:inline-block;
+}
+.pDiv{
+    width: 100px;
+    height: 20px;
+    border:1px solid #000;
+    position:relative;
+    display:block;
+    margin: 0;
+    padding: 6px;
+}
+#date{
+    text-align:center;
+    left:50%;
+    transform:translate(-50%,0);
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:14px;
+
+}
+.presc{
+    display:inline-block;
+    border:1px solid black;
+    position:relative;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin:0;
+    padding:10px;
+    width:200px;
+
+}
+#listContainer{
+    margin-top:5px;
+    margin-bottom:5px;
+    display:inline-block;
+    position:relative;
+    margin:0;
+    padding:0;
+    border:1px solid black;
+    width:220px;
+    left:50%;
+    transform:translate(-50%,0);
+}
+input{
+    width:20px;
+    margin-left:10px;
+    margin-right:10px;
+
+}
+.string{
+    margin-top:5px;
+    margin-bottom:5px;
+    overflow:hidden;
+}
+.title{
+    position:relative;
+    display:inline-block;
+    left:50%;
+    transform:translate(-50%,0);
+}
+.number{
+    width:20px;
+    height:20px;
+    position:absolute;
+    display:inline-block;
+    top:2px;
+    left:2px;
+    border-radius: 10px;
+    background-color: rgba(233,233,233,0.8);
+    text-align: center;
+}
+#patient{
+    text-align:center;
+    left:50%;
+    transform:translate(-50%,0);
+    margin-top:5px;
+    margin-bottom:5px;
+}
+div.ui-datepicker{
+    display:inline-block !important;
+    margin-top:5px;
+    position:relative;
+    left:50%;
+    transform:translate(-50%,0);
+    font-size:10px;
+    width:200px;
+}
+#games{
+    border:1px solid black;
+    display:inline-block;
+    position:relative;
+    margin:0;
+    margin-top:10px;
+    margin-bottom:10px;
+    left:50%;
+    transform:translate(-50%,0);
+    font-size:19px;
+    width:200px;
+    padding:5px;
+
+
+}
+.g{
+    cursor:pointer;
+    border:1px solid #000;
+    display:inline-block;
+    position:relative;
+    left:50%;
+    transform:translate(-50%,0);
+    font-size:15px;
+    width:180px;
+    height:30px;
+    padding:0px;
+    margin:0;
+    text-align: center;
+}
+.info{
+    border: 1px solid black;
+    overflow: hidden;
+    width: 40px;
+    position: absolute;
+   border-radius:5px;
+}
+.g span{
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: inline-block;
+}
+.exit{
+    width:20px;
+    height:20px;
+    position:absolute;
+    display:inline-block;
+    top:2px;
+    right:2px;
+    border-radius: 10px;
+    background-color: rgba(233,233,233,0.8);
+    text-align: center;
+    cursor:pointer;
+
+}
+.exit:hover{
+    background-color: rgba(150,150,150,0.9);
+}
+#pannel{
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 300px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    top: 932px;
+    z-index: 10;
+}
+.control{
+    width:40px;
+    height:20px;
+    position:absolute;
+    display:inline-block;
+    background-color: rgba(233,233,233,0.8);
+    text-align: center;
+    cursor:pointer;
+}
+.control:hover{
+    text-decoration:underline;
+}
+.controlSubmit {
+    bottom: -20px;
+    left: 70%;
+    transform: translate(-50%,0);
+}
+.controlEdit{
+    z-index:20;
+    bottom:2px;
+    right:2px;
+    display: none;
+}
+#submit{
+    padding:15px;
+    margin:0;
+    position:absolute;
+    display:inline-block;
+    bottom:0;
+    right:0;
+    width:70px;
+    cursor:pointer;
+    background-color:rgba(233,233,233,0.8);
+    text-align: center;
+}
+.shift{
+    animation:shitPrescription 1s;
+    animation-timing-function:cubic-bezier(0.25,0.75,0.75,0.8);
+}
+#back{
+    position:absolute;
+    width:80px;
+    height:80px;
+    top:806px;
+    right:20px;
+    padding:15px;
+    margin:0px;
+    display: inline-block;
+    border-radius:65px;
+    background-color: #e3e4dc;
+    text-align: center;
+    line-height: 80px;
+    cursor:pointer;
+}
+
+.ui-datepicker {
+    background: #e3e4dc !important;
+    border: 1px solid transparent !important;
+    color: #2073d1 !important;
+}
+.ui-datepicker-title,.ui-datepicker-header{
+    background: #e3e4dc !important;
+    border:1px solid transparent !important;
+}
+.ui-widget-header{
+    color:#000 !important;
+}
