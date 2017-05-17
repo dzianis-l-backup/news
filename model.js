@@ -306,6 +306,7 @@ function News(id, link, title, description){
 }
 
 News.getNews = function(callback,error){
+    console.log(`News.getNews`)
     var dbReq = "Select * from News";
     connection.query(dbReq,function(err,rows){
         if(err) return error("Error: query error");
@@ -325,9 +326,10 @@ News.getNews = function(callback,error){
 
 
 News.addNews = function(link,title,description,callback,error){
+    console.log('News.addNews')
     var dbReq = "INSERT INTO `news`(`id`, `link`, `title`, `description`) VALUES (null,'"+link+"','"+title+"','"+description+"')";
     connection.query(dbReq,function(err,rows){
-        if(err) return error("Error: query error");
+        if(err) return error(`Error: query error: ${err}`);
         return callback("news added");
     });
 }

@@ -5,6 +5,9 @@ angular.module('app',['ngRoute'])
             .when('/admin', {
             template: '<admin></admin>'
             })
+            .when('/', {
+                template: '<auth></auth>'
+            })
             .when('/auth', {
                 template: '<auth></auth>'
             })
@@ -14,11 +17,32 @@ angular.module('app',['ngRoute'])
             .when('/user', {
                 template: '<user></user>'
             })
+            .when('/main', {
+                template: '<main></main>'
+            })
             .when('/notFound', {
                 template: '<not-found></not-found>'
             })
             .otherwise('/notFound');
     }])
+    .run( function($rootScope, $location) {
+
+        // register listener to watch route changes
+        $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+            if (current == undefined) return $location.path('/')
+            var flag = sessionStorage.getItem("flag");
+                if ( next.originalPath == "/user" && flag !== "isUser") {
+                    $location.path(current.originalPath)
+                }
+                if ( next.originalPath == "/admin" && flag !== "isAdmin") {
+                    $location.path(current.originalPath)
+                }
+                if ( next.originalPath == "/reviewer" && flag !== "isReviewer") {
+                    $location.path(current.originalPath)
+                }
+            }
+        );
+    })
     .service('loadNews',['$http',function($h){
         this.getNews = controller => {
             $h.get(`/api/news`)
@@ -30,15 +54,62 @@ angular.module('app',['ngRoute'])
                     console.log('news error')
                 });
         }
-
     }])
+    .service('passData',function(){
+        this.srcNews=''
+    })
     .component('panel',{
        templateUrl:"_panel/panel.html",
-        controller: function(loadNews){
+        controller: function(loadNews,passData,$location,$timeout,$rootScope,$scope){
             var self = this
             loadNews.getNews(self);
+            self.expandNews = (n)=>{
+                console.log(`panel: current news: ${n}`)
+                $rootScope.currentNews = n;
+                //passData.srcNews = n.link;
+                $rootScope.$broadcast("news", n)
+            }
+
+            $scope.$on("reloadNews",function(e,item){
+                loadNews.getNews(self);
+            })
+
+
         }
-    });
+    })
+    .component('view',{
+        templateUrl:"_view/view.html",
+        controller: function(loadNews,passData,$location,$scope){
+            var self = this;
+            $scope.$on("news",function(e,item){
+                console.log(item)
+                self.link = item.link;
+                self.description = item.description;
+                self.title = item.title;
+            });
+        }
+    })
+    .controller('appCtrl',function($scope,$location) {
+        $scope.showComments = function () {
+            var path
+            var role = sessionStorage.getItem("flag");
+            switch (role) {
+                case "isAdmin":
+                    path = "/admin"
+                    break;
+                case "isReviewer":
+                    path = "/reviewer"
+                    break;
+                case "isUser":
+                    path = "/user"
+                    break;
+                default:
+                    path = "/"
+                    break;
+            }
+            $location.path(path);
+        }})
+
 /*
     .controller('anCtrl',function($scope){
     $scope.news = [];

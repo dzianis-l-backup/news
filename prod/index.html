@@ -9,11 +9,11 @@
 		<title>News</title>
 	</head>
 
-	<body ng-app="app">
+	<body ng-app="app" ng-controller="appCtrl">
 
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
-				<a href="#" class="navbar-brand">news observer</a>
+				<a  class="navbar-brand">news observer</a>
 				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -22,42 +22,29 @@
 				</button>
 				<div class="collapse navbar-collapse navHeaderCollapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#">news</a></li>
+						<li ><a >comments</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">top list
+							<a class="dropdown-toggle" data-toggle="dropdown"> do
 								<ul class = "dropdown-menu">
-									<li><a href="#">comments</a></li>
-									<li><a href="#">rated</a></li>
+									<li><a ng-click="showComments()">comments</a></li>
+									<li><a href="#!/auth">authentication</a></li>
 								</ul>
 							</a>
 						</li>
-						<li><a href="#!/auth">authentication</a></li>
 					</ul>
 				</div>
 			</div>
 
 		</nav>
 		<div class="row">
-			<div class="newsView col-sm-9" >
+			<div class="newsView col-sm-9">
+				<view></view>
 				<ng-view></ng-view>
 			</div>
-			<div class="scrollPanel col-sm-3" >
+			<div class="scrollPanel col-sm-3">
 				<panel></panel>
-
-				<!--<div class="dataBlock" ng-repeat="n in news">
-					<span ng-bind="n.title" style="font-weight:bold;font-size: 16px;"></span><br>
-					<div>
-						<span ng-bind="n.description" style="font-weight:lighter;font-size: 13px;"></span>
-					</div>
-					<a href="{{n.link}}" name="source" target="_blank">{{n.link}}</a><br>
-					<img ng-click="expand(n)" ng-src="imgs/ar.ico" style="cursor:pointer;" width="20" height="20" >
-
-					<hr>
-				</div>-->
 			</div>
 		</div>
-
-
 		<script src="js/sha-1.js"></script>
 
 		<link href="bootstrap.min.css" rel="stylesheet"/>

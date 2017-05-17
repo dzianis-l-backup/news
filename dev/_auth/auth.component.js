@@ -1,5 +1,29 @@
 angular.module('app')
-    .service('authenticate',['$http',function($h){
+    .service('authenticate',['$http','$location',function($h,$l){
+
+        var self = this;
+        this.setSessionData = function(data){
+            var role;
+            var l;
+            switch(data.flag){
+                case "isAdmin":
+                    role = "isAdmin"
+                    l = '/admin'
+                    break;
+                case "isReviewer":
+                    role = "isReviewer"
+                    l = '/reviewer'
+                    break;
+                default:
+                    role = "isUser"
+                    l = '/user'
+                    break;
+            }
+            sessionStorage.setItem("flag",role);
+            sessionStorage.setItem("token",data.token);
+            $l.path(l)
+        }
+
         this.signIn = controller => {
 
             var message = {
@@ -14,8 +38,7 @@ angular.module('app')
             $h.post(`/api/signin`,message)
                 .then(function successCb(res){
                     console.log('auth: sign in success')
-                    if(res.data.token !== undefined)
-                        sessionStorage.setItem('token', res.data.token);
+                    self.setSessionData(res.data)
                 })
                 .catch(function errorCb(err){
                     console.log('auth: error')
@@ -36,8 +59,7 @@ angular.module('app')
             $h.post(`/api/signup`,message)
                 .then(function successCb(res){
                     console.log('auth: sing up success')
-                    if(res.data.token !== undefined)
-                        sessionStorage.token = res.data.token;
+                    //self.setSessionData(res.data)
                 })
                 .catch(function errorCb(err){
                     console.log('auth: error')

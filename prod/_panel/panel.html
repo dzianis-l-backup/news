@@ -1,2 +1,9 @@
-<div class="notFound"></div>
-<link rel="stylesheet" href="_notFound/notFound.css">
+<div class="dataBlock" ng-repeat="n in $ctrl.news">
+    <span ng-bind="n.title" style="font-weight:bold;font-size: 16px;"></span><br>
+    <div>
+        <span ng-bind="n.description" style="font-weight:lighter;font-size: 13px;"></span>
+    </div>
+    <a href="{{n.link}}" name="source" target="_blank">{{n.link}}</a><br>
+    <img ng-click="$ctrl.expandNews(n)" ng-src="imgs/expand.png" style="cursor:pointer;" width="20" height="20" >
+    <hr>
+</div>

@@ -109,13 +109,12 @@ app.post(`/api/signup`,(req,res,next) =>{
 
 })
 
-app.post(`/api/news`,(req,res,next) =>{
+app.get(`/api/news`,(req,res,next) =>{
+    console.log(`/api/news`)
     News.getNews(function(newsArray){
         return res.send(newsArray);
     },next);
 })
-
-
 
 
 app.use(function(req, res, next) {//check for token in body
@@ -144,6 +143,7 @@ app.use(function(req, res, next) {//check for token in body
 
 app.post('/comments',function(req,res,next){
     var news = req.body.news;
+    console.log(`/comments: news: ${news}`)
     Comments.getAll( function(commentsArray){
         res.send(commentsArray);
     },next,news);
@@ -234,7 +234,7 @@ app.post('/:anything',function(req,res,next){
 
 app.use(function (err, req, res, next) {
     console.log(err);
-    res.send({message:err});
+    res.status(404).send({message:err});
 });
 
 
